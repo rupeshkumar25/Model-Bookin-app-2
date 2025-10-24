@@ -14,11 +14,17 @@ export default function Profile() {
       <h1 className="text-3xl font-bold mb-2">{model.name}</h1>
       <p className="text-gray-600 mb-2">Age: {model.age}</p>
       <p className="text-gray-500 mb-4">{model.description}</p>
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {model.images.map((img, i) => (
-          <img key={i} src={img} alt={`${model.name}-${i}`} className="rounded-xl w-full h-48 object-cover" />
-        ))}
-      </div>
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  {model.images.map((img, i) => (
+    <img 
+      key={i} 
+      src={img} 
+      alt={`${model.name}-${i}`} 
+      className="rounded-xl w-full h-48 sm:h-64 object-cover" 
+    />
+  ))}
+</div>
+
       <WhatsAppButton number={model.whatsapp} />
     </div>
   );
